@@ -2,13 +2,13 @@ const samplePosts = [
   {
     id: 1,
     username: "alice",
-    content: "Excited to start our DBMS project!",
+    content: "content 1 ",
     timestamp: "2025-10-05 10:00",
   },
   {
     id: 2,
     username: "bob",
-    content: "Learning React is fun ",
+    content: "content 2 ",
     timestamp: "2025-10-05 10:30",
   },
 ];

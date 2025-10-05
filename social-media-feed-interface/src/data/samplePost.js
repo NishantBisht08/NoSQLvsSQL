@@ -8,7 +8,7 @@ const samplePosts = [
   {
     id: 2,
     username: "bob",
-    content: "Learning React is fun 😎",
+    content: "Learning React is fun ",
     timestamp: "2025-10-05 10:30",
   },
 ];

@@ -1,18 +1,31 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import Post from "./post";
-import samplePosts from "../data/samplePost";
-import "./Feed.css";
 
 function Feed() {
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:5000/api/posts")
+      .then((response) => {
+        setPosts(response.data);
+      })
+      .catch((error) => {
+        console.error("Error fetching posts:", error);
+      });
+  }, []);
+
   return (
     <div className="feed-container">
       <h2 className="feed-title">Social Media Feed</h2>
-      {samplePosts.map((post) => (
+
+      {posts.map((post) => (
         <Post
-          key={post.id}
-          username={post.username}
-          content={post.content}
-          timestamp={post.timestamp}
+          key={post._id?.$oid}
+          username={post.user_id?.$oid}
+          content={post.body}
+          timestamp={post.created_at?.$date}
         />
       ))}
     </div>

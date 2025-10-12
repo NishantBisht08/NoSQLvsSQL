@@ -1,0 +1,25 @@
+[
+  {
+    "id": { "oid": "68e4c90c215da4a4cccec34c" },
+    "userid": { "oid": "671b00000000000000000101" },
+    "body": "Just migrated from SQL to MongoDB and the flexibility is insane!",
+    "createdat": { "date": "2025-10-06T120000.000Z" },
+    "likes": [
+      { "oid": "671b00000000000000000105" },
+      { "oid": "671b00000000000000000104" }
+    ],
+    "comments": [
+      {
+        "userid": { "oid": "671b00000000000000000105" },
+        "body": "Interesting perspective.",
+        "createdat": { "date": "2025-10-07T080732.412Z" }
+      },
+      {
+        "userid": { "oid": "671b00000000000000000103" },
+        "body": "Can you explain more?",
+        "createdat": { "date": "2025-10-07T080732.412Z" }
+      }
+    ],
+    "tags": ["life", "update", "daily"]
+  }
+]

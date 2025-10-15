@@ -1,0 +1,9 @@
+\i drop.sql
+\i schema.sql
+\i users_seed.sql
+\i user_profiles_seed.sql
+\i posts_seed.sql
+\i follows_seed.sql
+\i feed1_fixed.sql
+\i messages_seed.sql
+\i notifications_seed.sql

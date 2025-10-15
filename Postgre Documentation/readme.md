@@ -50,5 +50,12 @@ Lists useful commands/CLI operations for interacting with the application or dat
 
 
 a. run the drop.sql file to drop all tables if they exist
+
 b. run schema.sql to create these tables
+
 c. run .sql files directly to fill up the database, no need to run .py files, those were used only for conversion from json to sql commands
+
+
+
+
+

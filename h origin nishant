@@ -1,0 +1,29 @@
+[33mcommit 348d777e2779c61bd74b212c9caca91a912c07ed[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mnishant[m[33m)[m
+Author: Nishant <your-email@example.com>
+Date:   Mon Oct 13 01:04:30 2025 +0530
+
+    connected mongo database
+
+[33mcommit 553bd1a83d3352a0bcb0cd9bcd17d58f2582dc0a[m[33m ([m[1;31morigin/nishant[m[33m)[m
+Author: Khushi Baliyan <230211194@geu.ac.in>
+Date:   Tue Oct 7 16:44:14 2025 +0530
+
+    Add MongoDB database collections under database/mongodb
+
+[33mcommit 50e2724cfd2e5844d98f56e1d14484d96c4c2b36[m[33m ([m[1;31morigin/main[m[33m, [m[1;32mmain[m[33m)[m
+Author: Nishant <your-email@example.com>
+Date:   Sun Oct 5 23:13:13 2025 +0530
+
+    ;)
+
+[33mcommit 2a4c76a4943f39fe1bbadbce5177ea1f295de7af[m
+Author: Nishant <your-email@example.com>
+Date:   Sun Oct 5 23:12:05 2025 +0530
+
+    ;)
+
+[33mcommit 8a0ea0f53a8b4d13b39b67d2e951e7afb29ef573[m
+Author: Nishant <your-email@example.com>
+Date:   Sun Oct 5 22:57:25 2025 +0530
+
+    setting project structure .remove extra files. slight interface work

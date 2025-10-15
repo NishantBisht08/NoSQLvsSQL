@@ -3,7 +3,9 @@ import axios from "axios";
 import Post from "./post";
 
 function Feed() {
-  const [posts, setPosts] = useState([]);
+  //const state = useState([]);
+  const [posts, setPosts] = useState([]); //returns array
+  //we named usedstate[0] posts and named usedstate[1] to setpost which is fuction
 
   useEffect(() => {
     axios

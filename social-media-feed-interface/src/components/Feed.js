@@ -1,35 +1,66 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React, { useState, useEffect } from "react";
 import Post from "./post";
+import "./Feed.css";
 
 function Feed() {
-  //const state = useState([]);
-  const [posts, setPosts] = useState([]); //returns array
-  //we named usedstate[0] posts and named usedstate[1] to setpost which is fuction
+  const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [dbType, setDbType] = useState("");
 
   useEffect(() => {
-    axios
-      .get("http://localhost:5000/api/posts")
+    fetch("http://localhost:5000/api/posts")
       .then((response) => {
-        setPosts(response.data);
+        if (!response.ok) {
+          throw new Error("Failed to fetch posts");
+        }
+        return response.json();
       })
-      .catch((error) => {
-        console.error("Error fetching posts:", error);
+      .then((responseData) => {
+        // Backend returns { data: [...], duration: ..., database: ... }
+        const postsArray = responseData.data || [];
+        const database = responseData.database || "unknown";
+
+        setPosts(postsArray);
+        setDbType(database);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error("Error fetching posts:", err);
+        setError(err.message);
+        setLoading(false);
       });
   }, []);
 
+  if (loading) {
+    return (
+      <div className="feed-container">
+        <div className="loading">Loading posts...</div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="feed-container">
+        <div className="error">Error: {error}</div>
+      </div>
+    );
+  }
+
   return (
     <div className="feed-container">
-      <h2 className="feed-title">Social Media Feed</h2>
-
-      {posts.map((post) => (
-        <Post
-          key={post._id?.$oid}
-          username={post.user_id?.$oid}
-          content={post.body}
-          timestamp={post.created_at?.$date}
-        />
-      ))}
+      <div className="feed-header">
+        <h2>Social Media Feed</h2>
+        <span className="db-badge">{dbType.toUpperCase()} Database</span>
+      </div>
+      <div className="feed">
+        {posts.length > 0 ? (
+          posts.map((post) => <Post key={post.post_id} post={post} />)
+        ) : (
+          <p>No posts available</p>
+        )}
+      </div>
     </div>
   );
 }

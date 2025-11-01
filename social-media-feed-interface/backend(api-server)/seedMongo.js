@@ -10,7 +10,7 @@ async function seedDatabase() {
 
   try {
     await client.connect();
-    console.log("✅ Connected to MongoDB");
+    console.log(" Connected to MongoDB");
 
     const db = client.db(dbName);
 
@@ -19,7 +19,7 @@ async function seedDatabase() {
     await db.collection("user_profiles").deleteMany({});
     await db.collection("posts").deleteMany({});
 
-    console.log("🗑️  Cleared old data");
+    console.log("  Cleared old data");
 
     // Insert test user (same UUID as PostgreSQL for consistency)
     const users = [
@@ -32,7 +32,7 @@ async function seedDatabase() {
     ];
 
     await db.collection("users").insertMany(users);
-    console.log(`✅ Inserted ${users.length} user(s)`);
+    console.log(` Inserted ${users.length} user(s)`);
 
     // Insert user profile
     const profiles = [
@@ -47,7 +47,7 @@ async function seedDatabase() {
     ];
 
     await db.collection("user_profiles").insertMany(profiles);
-    console.log(`✅ Inserted ${profiles.length} profile(s)`);
+    console.log(`Inserted ${profiles.length} profile(s)`);
 
     // Insert 100 test posts for performance testing
     const posts = [];
@@ -61,18 +61,18 @@ async function seedDatabase() {
     }
 
     await db.collection("posts").insertMany(posts);
-    console.log(`✅ Inserted ${posts.length} posts`);
+    console.log(`Inserted ${posts.length} posts`);
 
     // Verify data
     const userCount = await db.collection("users").countDocuments();
     const postCount = await db.collection("posts").countDocuments();
 
-    console.log("\n📊 Database Summary:");
+    console.log("\n Database Summary:");
     console.log(`   Users: ${userCount}`);
     console.log(`   Posts: ${postCount}`);
-    console.log("\n🎉 MongoDB seeded successfully!");
+    console.log("\n MongoDB seeded successfully!");
   } catch (error) {
-    console.error("❌ Error seeding database:", error);
+    console.error(" Error seeding database:", error);
   } finally {
     await client.close();
   }

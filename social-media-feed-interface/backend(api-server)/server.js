@@ -116,7 +116,7 @@ app.get("/api/performance", async (req, res) => {
     const metrics = { database: dbType, operations: [] };
 
     // Use a VALID user_id from your database (from pgAdmin query)
-    const validUserId = "671b0000-0000-0000-0000-010100000000"; // ← Copy one of your UUIDs here
+    const validUserId = "671b0000-0000-0000-0000-010100000000"; // ← Copy one of  UUIDs here
 
     // Test READ
     let start = Date.now();
@@ -152,10 +152,10 @@ app.get("/api/performance", async (req, res) => {
       duration: Date.now() - start,
     });
 
-    console.log("✓ Performance test complete!");
+    console.log(" Performance test complete!");
     res.json(metrics);
   } catch (error) {
-    console.error("❌ Performance test failed:", error.message);
+    console.error(" Performance test failed:", error.message);
     res.status(500).json({ error: error.message });
   }
 });
